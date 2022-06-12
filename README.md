@@ -1,4 +1,4 @@
-# users_dashboard
+# Gestion utilisateurs avec CRUD app sous le stack MERN
 Tableau de bord pour la gestion des utilisateurs en utilisant le stack MERN (MongoDB, Express.js, React.js et Node.js).
 
 Pour lancer l'application:
