@@ -11,4 +11,6 @@ Pour lancer l'application:
 
 NB: Si **npm install** ne marche pas, il est conseillé de supprimer la cache npm avec **npm cache clean --force** or **npm cache clean -f**.
 
-Thank you.
+Pour toute question, merci de me contacter sur le mail suivant: 
+     
+     # ayoub.ech-chamali9@etu.univ-lorraine.fr
