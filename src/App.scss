@@ -1,0 +1,21 @@
+// import fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans&display=swap');
+
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.primary-gradient{
+    background: #06283D;
+    background: linear-gradient(to right, #47B5FF, #06283D);
+    padding: 0.5rem;
+}
+
+
+
+// import partial files 
+@import './saas/extends';
+@import './saas/login';
+@import './saas/crud';
+
+
