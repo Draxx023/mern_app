@@ -9,27 +9,21 @@ import { showAction, deleteAction } from '../../container/actions';
 export default function Home() {
     const navigate = useNavigate();
 
-    const route = () => {
-        const token = localStorage.getItem('x-access-token');
-        return token ? true : false;
-    }
-
     useEffect(() => {
-        if (!route()) {
+        if (!localStorage.getItem('x-access-token')) {
             navigate('/login');
         }
-    }, [route, navigate]);
+    }, [navigate]);
 
     const dispatch = useDispatch();
 
-    const [errorMessage, setError] = useState("");
     const [usersData, setUsersData] = useState({ users: [] });
     const home = dispatch(showAction());
     home
         .then(data => {
             setUsersData({ users: data });
         }).catch(error => {
-            setError(error.data.err);
+            alert(error.data.err);
         });
 
     const handleDelete = (event) => {
@@ -41,18 +35,18 @@ export default function Home() {
                 alert("Data deleted successfully.");
                 navigate('/');
             }).catch(error => {
-                setError(error.data.err);
+                alert(error.data.err);
             });
         }
     }
     return (
-        <>
+        <html>
             <Header></Header>
             <main id="site-main">
                 <div className="container">
                     <HomeTable handler={handleDelete} data={usersData.users}></HomeTable>
                 </div>
             </main>
-        </>
+        </html>
     )
 }

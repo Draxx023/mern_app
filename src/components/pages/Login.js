@@ -4,8 +4,7 @@ import LoginForm from '../imports/LoginForm';
 import { loginAction } from '../../container/actions';
 import { useNavigate } from 'react-router-dom';
 
-import { useDispatch, useStore } from 'react-redux';
-import { registerAction } from '../../container/actions';
+import { useDispatch } from 'react-redux';
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -14,7 +13,6 @@ export default function Login() {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const store = useStore();
 
     // handler for form submit
     const handleSubmit = (event) => {

@@ -8,6 +8,13 @@
     --blue:#06283D;
 }
 
+html {
+    background: linear-gradient(-45deg, #1363DF, #06283D, #23a6d5, #DFF6FF);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -22,6 +29,7 @@ a {
 .container{
     max-width: 1024px;
     margin: auto;
+    background: none;
 }
 
 .nav-brand{
@@ -45,6 +53,8 @@ a {
 .border-shadow{
     border: 1px solid var(--border-btn);
     box-shadow: 1px 3px 10px #e9ecef;
+    background-color: white;
+    border-radius: 2.5rem;
 }
 
 .text-dark{
@@ -105,6 +115,11 @@ table{
     vertical-align: top;
     text-align: center;
     border-top: 1px solid var(--border);
+    background-color: white;
+}
+
+.table{
+    border: 1px solid var(--border);
 }
 
 .table td > a.btn{
@@ -123,8 +138,7 @@ table{
 
 .table .thead-dark th{
     color: #fff;
-    background-color: #fff ;
-    color: #32383e;
+    background-color: var(--blue) ;
 }
 
 @media only screen and (max-width: 1024px){

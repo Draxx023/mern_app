@@ -3,24 +3,17 @@ import Header from '../imports/Header';
 import AddUserForm from '../imports/AddUserForm';
 import { createAction } from '../../container/actions';
 import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 
 export default function Add() {
-
-    const user = useSelector(state => state.isLoggedIn);
     const navigate = useNavigate();
 
-    const route = () => {
-        const token = localStorage.getItem('x-access-token');
-        return token ? true : false;
-    }
-
     useEffect(() => {
-        if (!route()) {
+        if (!localStorage.getItem('x-access-token')) {
             navigate('/login');
         }
-    }, [route, navigate]);
+    }, [navigate]);
 
     // hook variables
     const [name, setName] = useState("");
@@ -42,6 +35,7 @@ export default function Add() {
         const validate = dispatch(createAction(newUser));
         validate.then(data => {
             alert("Data inserted successfully!");
+            navigate("/");
         }).catch(error => {
             setError(error.data.err);
         });
@@ -56,23 +50,23 @@ export default function Add() {
         setError
     };
     return (
-        <>
+        <html>
             <Header></Header>
             <main id="site-main">
                 <div className="container">
                     <div className="box-nav d-flex-justify-between">
                         <div className="filter">
-                            <a href="/" className="fas fa-angle-double-left">Tous les utilisateurs</a>
+                            <a href="/" className="text-light fas fa-angle-double-left">Tous les utilisateurs</a>
                         </div>
                     </div>
                     <div className="form-title text-center">
-                        <h2 className="text-dark">Nouveau utilisateur</h2>
+                        <h2 className="text-light">Nouveau utilisateur</h2>
                         <span className="text-light">Utilisez le formulaire suivant pour créer un nouveau utlisateur</span>
                     </div>
                     <AddUserForm addUserState={addUserData}></AddUserForm>
                 </div>
             </main>
-        </>
+        </html>
     )
 }
 

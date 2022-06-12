@@ -8,19 +8,16 @@ import { getUserInfoAction, updateAction } from '../../container/actions';
 export default function Update() {
 
     const navigate = useNavigate();
-    const route = () => {
-        const token = localStorage.getItem('x-access-token');
-        return token ? true : false;
-    }
+
     useEffect(() => {
-        if (!route()) {
+        if (!localStorage.getItem('x-access-token')) {
             navigate('/login');
         }
-    }, [route, navigate]);
+    }, [navigate]);
 
     const dispatch = useDispatch();
 
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const [user, setUserData] = useState({ user: [] });
 
     const id = searchParams.get("id");
@@ -55,6 +52,7 @@ export default function Update() {
         const validate = dispatch(updateAction(id, updateUser));
         validate.then(data => {
             alert("Data updated successfully!");
+            navigate("/");
         }).catch(error => {
             setError(error.data.err);
         });
@@ -72,13 +70,13 @@ export default function Update() {
     };
 
     return (
-        <>
+        <html>
             <Header></Header>
             <main id="site-main">
                 <div className="container">
                     <UpdateForm states={states} data={user.user}></UpdateForm>
                 </div>
             </main>
-        </>
+        </html>
     )
 }
