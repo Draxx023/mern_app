@@ -4,13 +4,14 @@ Tableau de bord pour la gestion des utilisateurs en utilisant le stack MERN (Mon
 Pour lancer l'application:
   1) Ajouter au fichier config.env le lien pour se connecter à votre cluster si vous le souhaitez ( pour souci de simplicité, mon cluster est déja inclus par défaut dans le fichier).
   2) Dans le terminal, lancer: 
-
-    # npm install && npm start
-
+```
+    npm install && npm start
+```
   3) S'inscrire et se connecter pour acceder au tableau de gestion.
 
 NB: Si **npm install** ne marche pas, il est conseillé de supprimer la cache npm avec **npm cache clean --force** or **npm cache clean -f**.
 
 Pour toute question, merci de me contacter sur le mail suivant: 
-     
-     # ayoub.ech-chamali9@etu.univ-lorraine.fr
+```     
+ayoub.ech-chamali9@etu.univ-lorraine.fr
+```
