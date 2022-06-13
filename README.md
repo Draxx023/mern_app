@@ -14,7 +14,7 @@ npm install && npm start
 ### NB:
 Si **npm install** ne marche pas, il est conseillé de supprimer la cache npm avec **npm cache clean --force** or **npm cache clean -f**.
 
-Pour toute question, merci de me contacter sur le mail suivant: 
+Pour toute question, merci de me contacter avec le mail suivant: 
 ```     
 ayoub.ech-chamali9@etu.univ-lorraine.fr
 ```
