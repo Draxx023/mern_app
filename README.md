@@ -1,4 +1,5 @@
-# Gestion utilisateurs avec CRUD app sous le stack MERN
+# Exemple d'application CRUD pour la gestion utilisateurs avec le stack MERN 
+## Crée par Ayoub Ech Chamali 3A IA2R-FISE, Polytech Nancy
 Tableau de bord pour la gestion des utilisateurs en utilisant le stack MERN (MongoDB, Express.js, React.js et Node.js).
 
 Pour lancer l'application:
