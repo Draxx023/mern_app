@@ -26,9 +26,8 @@ export default function Home() {
             alert(error.data.err);
         });
 
-    const handleDelete = (event) => {
+    const handleDelete = (event, id) => {
         event.preventDefault();
-        var id = event.target.dataset.remove;
         if (window.confirm("Do you really want to delete this record?")) {
             const validate = dispatch(deleteAction(id));
             validate.then((data) => {

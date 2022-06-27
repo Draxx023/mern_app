@@ -38,7 +38,7 @@ export default function HomeTable(props) {
                                             <i className="fas fa-pencil-alt"></i>
                                         </span>
                                     </Link>
-                                    <Link to="#" className="btn border-shadow delete" onClick={handleDelete} data-remove={user._id}>
+                                    <Link to="#" className="btn border-shadow delete" onClick={(event) => handleDelete(event, user._id)} data-remove={user._id}>
                                         <span className="text-gradient">
                                             <i className="fas fa-times"></i>
                                         </span>
