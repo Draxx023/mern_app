@@ -34,7 +34,7 @@ export default function Add() {
         };
         const validate = dispatch(createAction(newUser));
         validate.then(data => {
-            alert("Data inserted successfully!");
+            alert("Nouveau utilisateur ajouté!");
             navigate("/");
         }).catch(error => {
             setError(error.data.err);
@@ -50,7 +50,7 @@ export default function Add() {
         setError
     };
     return (
-        <html>
+        <div id="bg">
             <Header></Header>
             <main id="site-main">
                 <div className="container">
@@ -66,7 +66,7 @@ export default function Add() {
                     <AddUserForm addUserState={addUserData}></AddUserForm>
                 </div>
             </main>
-        </html>
+        </div>
     )
 }
 

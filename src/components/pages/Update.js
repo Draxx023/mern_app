@@ -51,7 +51,7 @@ export default function Update() {
 
         const validate = dispatch(updateAction(id, updateUser));
         validate.then(data => {
-            alert("Data updated successfully!");
+            alert("Mise à jour des données avec succès!");
             navigate("/");
         }).catch(error => {
             setError(error.data.err);
@@ -70,13 +70,13 @@ export default function Update() {
     };
 
     return (
-        <html>
+        <div id="bg">
             <Header></Header>
             <main id="site-main">
                 <div className="container">
                     <UpdateForm states={states} data={user.user}></UpdateForm>
                 </div>
             </main>
-        </html>
+        </div>
     )
 }

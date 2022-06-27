@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import Header from '../imports/Header';
 import HomeTable from '../imports/HomeTable';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { showAction, deleteAction } from '../../container/actions';
 
 
 export default function Home() {
     const navigate = useNavigate();
-
+    const user = useSelector(state => state.isLoggedIn);
+    const route = () => {
+        const token = localStorage.getItem('x-access-token')
+        return token ? true : false
+    }
     useEffect(() => {
-        if (!localStorage.getItem('x-access-token')) {
-            navigate('/login');
+        if (!route()) {
+            navigate('/login')
         }
-    }, [navigate]);
+    }, [route, navigate])
 
     const dispatch = useDispatch();
 
@@ -28,10 +32,10 @@ export default function Home() {
 
     const handleDelete = (event, id) => {
         event.preventDefault();
-        if (window.confirm("Do you really want to delete this record?")) {
+        if (window.confirm("Est-ce que vous voulez vraiment supprimer cet utilisateur?")) {
             const validate = dispatch(deleteAction(id));
             validate.then((data) => {
-                alert("Data deleted successfully.");
+                alert("Utilisateur supprimé.");
                 navigate('/');
             }).catch(error => {
                 alert(error.data.err);
@@ -39,13 +43,13 @@ export default function Home() {
         }
     }
     return (
-        <html>
+        <div id="bg">
             <Header></Header>
             <main id="site-main">
                 <div className="container">
                     <HomeTable handler={handleDelete} data={usersData.users}></HomeTable>
                 </div>
             </main>
-        </html>
+        </div>
     )
 }

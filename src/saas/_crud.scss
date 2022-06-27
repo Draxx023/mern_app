@@ -8,11 +8,12 @@
     --blue:#06283D;
 }
 
-html {
+#bg {
     background: linear-gradient(-45deg, #1363DF, #06283D, #23a6d5, #DFF6FF);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     height: 100vh;
+    padding-top: 0.5rem;
 }
 
 * {
@@ -98,7 +99,7 @@ a {
 
 #site-main .container .box-nav > a{
     font-size: 1em;
-    padding: .5em 1em;
+    padding: 1em;
 }
 
 #site-main .container form{
